@@ -4,7 +4,7 @@ I am a lecturer at the Department of Physiology and Biochemistry at the Universi
 
 In order to be as transparent as possible with the process, I would like to make it very clear that I do not do very well with tedious tasks. As a result, during this process I will be using quite a bit of aid from Generative AI (mostly GPT-4). I review all output and do my best to ensure accurcy. In any case, any errors that you may find are very much my own. Most of the good stuff in this text stems from Danielle Navarro (and the other authors).
 
-The book is still a work in progress!
+The book is still a work in progress but you can download the current state of affairs here: [https://github.com/claudebajada/JASPbook/blob/master/build/lsj.pdf]
 
 I would be happy with any comments and / or suggestions I am happy to hear them
 

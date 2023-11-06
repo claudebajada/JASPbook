@@ -6,7 +6,6 @@
 
 Any time that you get a new data set to look at one of the first tasks that you have to do is find ways of summarising the data in a compact, easily understood fashion. This is what \keyterm{descriptive statistics} (as opposed to inferential statistics) is all about. In fact, to many people the term ``statistics'' is synonymous with descriptive statistics. It is this topic that we'll consider in this chapter, but before going into any details, let's take a moment to get a sense of why we need descriptive statistics. To do this, let's open the \filename{aflsmall\_margins} file and see what variables are stored in the file.
 
-\vspace{0.5cm}
 \begin{figure}[htb]
 \begin{center}
 \epsfig{file=../img/descriptives/aflsmall_margins.png,clip=true,width=14cm} 
@@ -16,7 +15,7 @@ Any time that you get a new data set to look at one of the first tasks that you 
 \end{center}
 \end{figure}
 
-In fact, there is just one variable here, \rtext{afl.margins}. We'll focus a bit on this variable in this chapter, so I'd better tell you what it is. Unlike most of the data sets in this book, this is actually real data, relating to the Australian Football League (AFL).\FOOTNOTE{Note for non-Australians: the AFL is an Australian rules football competition. You don't need to know anything about Australian rules in order to follow this section.} The \rtext{afl.margins} variable contains the winning margin (number of points) for all 176 home and away games played during the 2010 season. 
+In fact, there is just one variable here, \rtext{afl.margins}. We'll focus a bit on this variable in this chapter, so I'd better tell you what it is. The \rtext{afl.margins} variable contains the reduction in systolic blood pressure reduction (in mmHg) observed in a 178 patients after being administered antihypertensive medication over a period of time. 
 
 This output doesn't make it easy to get a sense of what the data are actually saying. Just ``looking at the data'' isn't a terribly effective way of understanding data. In order to get some idea about what the data are actually saying we need to calculate some descriptive statistics (this chapter) and draw some nice pictures (Chapter~\ref{ch:graphics}). Since the descriptive statistics are the easier of the two topics I'll start with those, but nevertheless I'll show you a histogram of the \rtext{afl.margins} data since it should help you get a sense of what the data we're trying to describe actually look like, see Figure~\ref{fig:histogram1}. We'll talk a lot more about how to draw histograms in Section~\ref{sec:hist}. For now, it's enough to look at the histogram and note that it provides a fairly interpretable representation of the \rtext{afl.margins} data.
 
@@ -35,7 +34,7 @@ Drawing pictures of the data, as I did in Figure~\ref{fig:histogram1}, is an exc
 
 \SUBSECTION{The mean\label{sec:mean}}
 
-The \keyterm{mean} of a set of observations is just a normal, old-fashioned average. Add all of the values up, and then divide by the total number of values. The first five AFL winning margins were 56, 31, 56, 8 and 32, so the mean of these observations is just:
+The \keyterm{mean} of a set of observations is just a normal, old-fashioned average. Add all of the values up, and then divide by the total number of values. The first five systolic blood pressure reductions were 56, 31, 56, 8 and 32, so the mean of these observations is just:
 $$
 \frac{56 + 31 + 56 + 8 + 32}{5} = \frac{183}{5} = 36.60
 $$
@@ -46,11 +45,11 @@ The first piece of notation to introduce is $N$, which we'll use to refer to the
 \begin{center}
 \begin{tabular}{ccc}
 the observation & its symbol & the observed value \\ \hline
-winning margin, game 1 & $X_1$ & 56 points \\
-winning margin, game 2 & $X_2$ & 31 points \\
-winning margin, game 3 & $X_3$ & 56 points \\
-winning margin, game 4 & $X_4$ & 8 points \\
-winning margin, game 5 & $X_5$ & 32 points \\
+Blood pressure decrease, patient 1 & $X_1$ & 56 mmHg \\
+Blood pressure decrease, patient 2 & $X_2$ & 31 mmHg \\
+Blood pressure decrease, patient 3 & $X_3$ & 56 mmHg \\
+Blood pressure decrease, patient 4 & $X_4$ & 8 mmHg \\
+Blood pressure decrease, patient 5 & $X_5$ & 32 mmHg \\
 \end{tabular}
 \end{center}
 
@@ -61,7 +60,7 @@ Okay, now let's try to write a formula for the mean. By tradition, we use $\bar{
 $$
 \bar{X} = \frac{X_1 + X_2 + \ldots + X_{N-1} + X_N}{N}
 $$
-This formula is entirely correct but it's terribly long, so we make use of the \keyterm{summation symbol} $\scriptstyle\sum$ to shorten it.\FOOTNOTE{The choice to use $\Sigma$ to denote summation isn't arbitrary. It's the Greek upper case letter sigma, which is the analogue of the letter S in that alphabet. Similarly, there's an equivalent symbol used to denote the multiplication of lots of numbers, because multiplications are also called ``products'' we use the $\Pi$ symbol for this (the Greek upper case pi, which is the analogue of the letter P).} If I want to add up the first five observations I could write out the sum the long way, $X_1 + X_2 + X_3 + X_4 +X_5$ or I could use the summation symbol to shorten it to this:
+This formula is entirely correct but it's terribly long, so we make use of the \newline \keyterm{summation symbol} $\scriptstyle\sum$ to shorten it.\FOOTNOTE{The choice to use $\Sigma$ to denote summation isn't arbitrary. It's the Greek upper case letter sigma, which is the analogue of the letter S in that alphabet. Similarly, there's an equivalent symbol used to denote the multiplication of lots of numbers, because multiplications are also called ``products'' we use the $\Pi$ symbol for this (the Greek upper case pi, which is the analogue of the letter P).} If I want to add up the first five observations I could write out the sum the long way, $X_1 + X_2 + X_3 + X_4 +X_5$ or I could use the summation symbol to shorten it to this:
 $$
 \sum_{i=1}^5 X_i
 $$
@@ -81,7 +80,7 @@ Okay, that's the maths. So how do we get the magic computing box to do the work 
 \begin{figure}[ht]
 \begin{center}
 \epsfig{file=../img/descriptives/descriptives_default.png,clip=true,width=12cm} 
-\caption{Default descriptives for the AFL 2010 winning margin data (the \texttt{afl.margins} variable). }
+\caption{Default descriptives for the systolic blood pressure reduction data (the \texttt{afl.margins} variable). }
 \label{fig:descriptives_default}
 \HR
 \end{center}
@@ -121,11 +120,11 @@ Knowing how to calculate means and medians is only a part of the story. You also
 \end{center}
 \end{figure}
 
-Let's expand on that last part a little. One consequence is that there are systematic differences between the mean and the median when the histogram is asymmetric (skewed; see Section~\ref{sec:skewkurt}). This is illustrated in Figure~\ref{fig:meanmedian}. Notice that the median (right hand side) is located closer to the ``body'' of the histogram, whereas the mean (left hand side) gets dragged towards the ``tail'' (where the extreme values are). To give a concrete example, suppose Bob (income \$50,000), Kate (income \$60,000) and Jane (income \$65,000) are sitting at a table. The average income at the table is \$58,333 and the median income is \$60,000. Then Bill sits down with them (income \$100,000,000). The average income has now jumped to \$25,043,750 but the median rises only to \$62,500. If you're interested in looking at the overall income at the table the mean might be the right answer. But if you're interested in what counts as a typical income at the table the median would be a better choice here.
+Let's expand on that last part a little. One consequence is that there are systematic differences between the mean and the median when the histogram is asymmetric (skewed; see Section~\ref{sec:skewkurt}). This is illustrated in Figure~\ref{fig:meanmedian}. Notice that the median (right hand side) is located closer to the ``body'' of the histogram, whereas the mean (left hand side) gets dragged towards the ``tail'' (where the extreme values are). To give a concrete example, consider a General Practitioner who has three patients with blood glucose levels of 5.0, 5.5, and 6.0 mmol/L. Their average glucose level would be 5.5 mmol/L, and the median would be also 5.5 mmol/L. Now, suppose a fourth patient joins with a glucose level of 20 mmol/L. The average glucose level skyrockets to about 9.1 mmol/L, whereas the median merely increases to 5.75 mmol/L. If you're evaluating the overall blood glucose of the group, the mean might offer valuable insights. However, for a more typical representation of patient responses, the median would serve as a more robust measure. 
 
 \SUBSECTION{A real life example~\label{sec:housingpriceexample}}
 
-To try to get a sense of why you need to pay attention to the differences between the mean and the median let's consider a real life example. Since I tend to mock journalists for their poor scientific and statistical knowledge, I should give credit where credit is due. This is an excellent article on the ABC news website\FOOTNOTE{\url{www.abc.net.au/news/stories/2010/09/24/3021480.htm}} from 24 September, 2010:
+To try to get a sense of why you need to pay attention to the differences between the mean and the median let's consider a real life example. This will be one of the rare non-medical examples since I believe it make the point excellently. This example is from an excellent article on the ABC news published on 24 September, 2010:
 \small
 \begin{quote}
 Senior Commonwealth Bank executives have travelled the world in the past couple of weeks with a presentation showing how Australian house prices, and the key price to income ratios, compare favourably with similar countries. ``Housing affordability has actually been going sideways for the last five to six years,'' said Craig James, the chief economist of the bank's trading arm, CommSec.
@@ -188,7 +187,7 @@ Now that we have our frequency table we can just look at it and see that, over t
 One last point to make regarding the mode. Whilst the mode is most often calculated when you have nominal data, because means and medians are useless for those sorts of variables, there are some situations in which you really do want to know the mode of an ordinal, interval or ratio scale variable. For instance, let's go back to our \rtext{afl.margins} variable. This variable is clearly ratio scale (if it's not clear to you, it may help to re-read Section~\ref{sec:scales}), and so in most situations the mean or the median is the measure of central tendency that you want. But consider this scenario: a friend of yours is offering a bet and they pick a football game at random. Without knowing who is playing you have to guess the {\it exact} winning margin. If you guess correctly you win \$50. If you don't you lose \$1. There are no consolation prizes for ``almost'' getting the right answer. You have to guess exactly the right margin. For this bet, the mean and the median are completely useless to you. It is the mode that you should bet on. To calculate the mode for the \rtext{afl.margins} variable in JASP, go back to that data set and on the `Descriptives' - `Descriptive Statistics' screen you will see you can expand the section marked `Statistics'. Click on the checkbox marked `Mode' and you will see the modal value presented in the `Descriptive Statistics' Table, as in Figure \ref{fig:aflsmall_margins_mode}. So the 2010 data suggest you should bet on a 3 point margin.
 
 \vspace{0.5cm}
-\begin{figure}[!!htb]
+\begin{figure}[htb!]
 \begin{center}
 \epsfig{file=../img/descriptives/aflsmall_margins_mode.png,clip=true,width=12cm} 
 \caption{A screenshot of JASP showing the modal value for the \texttt{afl.margins} variable }
@@ -215,7 +214,7 @@ it is clear that the range is not robust. This variable has a range of 110 but i
 The \keyterm{interquartile range} (IQR) is like the range, but instead of the difference between the biggest and smallest value the difference between the 25th percentile and the 75th percentile is taken. If you don't already know what a \keyterm{percentile} is, the 10th percentile of a data set is the smallest number $x$ such that 10\% of the data is less than $x$. In fact, we've already come across the idea. The median of a data set is its 50th percentile! In JASP you can easily specify the 25th, 50th and 75th percentiles by clicking the checkbox `Quartiles' in the `Descriptives' - `Descriptive Statistics' - `Statistics' screen. 
 
 %\vspace{0.5cm}
-\begin{figure}[htb]
+\begin{figure}[htb!]
 \begin{center}
 \epsfig{file=../img/descriptives/aflsmall_margins_iqr.png,clip=true,width=5cm} 
 \caption{A screenshot of JASP showing the Quartiles for the \texttt{afl.margins} variable }
@@ -228,9 +227,9 @@ And not surprisingly, in Figure \ref{fig:aflsmall_margins_iqr} the 50th percenti
 
 \SUBSECTION{Mean absolute deviation~\label{sec:aad}}
 
-The two measures we've looked at so far, the range and the interquartile range, both rely on the idea that we can measure the spread of the data by looking at the percentiles of the data. However, this isn't the only way to think about the problem. A different approach is to select a meaningful reference point (usually the mean or the median) and then report the ``typical'' deviations from that reference point. What do we mean by ``typical'' deviation? Usually, this is the mean or median value of these deviations. In practice, this leads to two different measures: the ``mean absolute deviation'' (from the mean) and the ``median absolute deviation'' (from the median). From what I've read, the measure based on the median seems to be used in statistics and does seem to be the better of the two. But to be honest I don't think I've seen it used much in psychology. The measure based on the mean does occasionally show up in psychology though. In this section I'll talk about the first one, and I'll come back to talk about the second one later.
+The two measures we've looked at so far, the range and the interquartile range, both rely on the idea that we can measure the spread of the data by looking at the percentiles of the data. However, this isn't the only way to think about the problem. A different approach is to select a meaningful reference point (usually the mean or the median) and then report the ``typical'' deviations from that reference point. What do we mean by ``typical'' deviation? Usually, this is the mean or median value of these deviations. In practice, this leads to two different measures: the ``mean absolute deviation'' (from the mean) and the ``median absolute deviation'' (from the median). From what I've read, the measure based on the median seems to be used in statistics and does seem to be the better of the two. But to be honest I don't think I've seen it used much in academic articles. The measure based on the mean does occasionally show up though. In this section I'll talk about the first one, and I'll come back to talk about the second one later.
 
-Since the previous paragraph might sound a little abstract, let's go through the \keyterm{mean absolute deviation} from the mean a little more slowly. One useful thing about this measure is that the name actually tells you exactly how to calculate it. Let's think about our AFL winning margins data, and once again we'll start by pretending that there are only 5 games in total, with winning margins of 56, 31, 56, 8 and 32. Since our calculations rely on an examination of the deviation from some reference point (in this case the mean), the first thing we need to calculate is the mean, $\bar{X}$. For these five observations, our mean is $\bar{X} = 36.6$. The next step is to convert each of our observations $X_i$ into a deviation score. We do this by calculating the difference between the observation $X_i$ and the mean $\bar{X}$. That is, the deviation score is defined to be $X_i - \bar{X}$. For the first observation in our sample, this is equal to $56 - 36.6 = 19.4$. Okay, that's simple enough. The next step in the process is to convert these deviations to absolute deviations, and we do this by converting any negative values to positive ones. Mathematically, we would denote the absolute value of $-3$ as $|-3|$, and so we say that $|-3| = 3$. We use the absolute value here because we don't really care whether the value is higher than the mean or lower than the mean, we're just interested in how {\it close} it is to the mean. To help make this process as obvious as possible, the table below shows these calculations for all five observations:
+Since the previous paragraph might sound a little abstract, let's go through the \newline \keyterm{mean absolute deviation} from the mean a little more slowly. One useful thing about this measure is that the name actually tells you exactly how to calculate it. Let's think about our AFL winning margins data, and once again we'll start by pretending that there are only 5 games in total, with winning margins of 56, 31, 56, 8 and 32. Since our calculations rely on an examination of the deviation from some reference point (in this case the mean), the first thing we need to calculate is the mean, $\bar{X}$. For these five observations, our mean is $\bar{X} = 36.6$. The next step is to convert each of our observations $X_i$ into a deviation score. We do this by calculating the difference between the observation $X_i$ and the mean $\bar{X}$. That is, the deviation score is defined to be $X_i - \bar{X}$. For the first observation in our sample, this is equal to $56 - 36.6 = 19.4$. Okay, that's simple enough. The next step in the process is to convert these deviations to absolute deviations, and we do this by converting any negative values to positive ones. Mathematically, we would denote the absolute value of $-3$ as $|-3|$, and so we say that $|-3| = 3$. We use the absolute value here because we don't really care whether the value is higher than the mean or lower than the mean, we're just interested in how {\it close} it is to the mean. To help make this process as obvious as possible, the table below shows these calculations for all five observations:
 
 \vspace{0.5cm}
 \begin{center}
@@ -372,7 +371,7 @@ In short, the IQR and the standard deviation are easily the two most common meas
 
 \section{Skew and kurtosis \label{sec:skewkurt}}
 
-There are two more descriptive statistics that you will sometimes see reported in the psychological literature: skew and kurtosis. In practice, neither one is used anywhere near as frequently as the measures of central tendency and variability that we've been talking about. Skew is pretty important, so you do see it mentioned a fair bit, but I've actually never seen kurtosis reported in a scientific article to date. 
+There are two more descriptive statistics that you will sometimes see reported in the  literature: skew and kurtosis. In practice, neither one is used anywhere near as frequently as the measures of central tendency and variability that we've been talking about. Skew is pretty important, so you do see it mentioned a fair bit, but I've actually never seen kurtosis reported in a scientific article to date. 
 
 \begin{figure}[ht]
 \begin{center}
@@ -396,25 +395,24 @@ where $N$ is the number of observations, $\bar{X}$ is the sample mean, and $\hat
 
 Perhaps more helpfully, you can use JASP to calculate skewness: it's a check box in the `Statistics' options under `Descriptives' - `Descriptive Statistics'. For the \rtext{afl.margins} variable, the skewness figure is \rtext{0.780}. If you divide the skewness estimate by the Std. error for skewness you have an indication of how skewed the data is. Especially in small samples ($N<50$), one rule of thumb suggests that a value of 2 or less can mean that the data is not very skewed, and a value of over 2 that there is sufficient skew in the data to possibly limit its use in some statistical analyses. Note that this is a rule of thumb -- there is no clear agreement on this interpretation. That said, such analysis does indicate that the AFL winning margins data is somewhat skewed (\rtext{0.780 / 0.183 = 4.262}, which is certainly greater than 2). 
 
-The final measure that is sometimes referred to, though very rarely in practice, is the \keyterm{kurtosis} of a data set. Put simply, kurtosis is a measure of the ``pointiness'' of a data set, as illustrated in Figure~\ref{fig:kurtosis}. By convention, we say that the ``normal curve'' (black lines) has zero kurtosis, so the pointiness of a data set is assessed relative to this curve. 
+The final measure that is sometimes referred to, though very rarely in practice, is the \keyterm{kurtosis} of a data set. This is illustrated in Figure~\ref{fig:kurtosis}. This term was always one that confused me as a student. If you do a brief search in the literature, it seems as though there is disagreement over what the term "kurtosis" refers to. Some argue that kurtosis tells you something about the "pointiness" of a distribution. After all kurtosis is derived from a Greek "Kurtos" that means curvature. In fact (and if you do not believe me I invite you to read this rather impassioned article by \textcite{Westfall2014}) kurtosis actually tells us something about the "tails" or "outliers" of a distribution. The normal distribution has a kurtosis value of zero. We call this mesokurtic. Platykurtic distributions have thinner tails (or less outliers) than the normal distribution, while leptokurtic distributions have fatter tails. It is true that often platykurtic distributions have a "flat peak" and leptokurtic distributions have a "pointy peak", however, it is possible to contrive plenty of distributions that do not exhibit this property. So it is final. If anyone asks you about kurtosis, you will think about tails! 
 
-\begin{figure}[htb]
+\begin{figure}[htb!]
 \begin{center}
 \epsfig{file = ../img/descriptives/kurtosis.eps, clip=true,width = 14cm}
-\caption{An illustration of kurtosis. On the left, we have a ``platykurtic'' data set (kurtosis = $-.95$) meaning that the data set is ``too flat''. In the middle we have a ``mesokurtic'' data set (kurtosis is almost exactly 0) which means that the pointiness of the data is just about right. Finally, on the right, we have a ``leptokurtic'' data set (kurtosis $= 2.12$) indicating that the data set is ``too pointy''. Note that kurtosis is measured with respect to a normal curve (black line).}
+\caption{An illustration of kurtosis. On the left, we have a ``platykurtic'' data set (kurtosis = $-.95$). Notice the thin tail. In the middle we have a ``mesokurtic'' data set (kurtosis is almost exactly 0). Finally, on the right, we have a ``leptokurtic'' data set (kurtosis $= 2.12$). Notice the fat tail. Note that the black line shows the normal distribution for reference.}
 \label{fig:kurtosis}
 \HR
 \end{center}
 \end{figure}
 
-In this Figure, the data on the left are not pointy enough, so the kurtosis is negative and we call the data {\it platykurtic}. The data on the right are too pointy, so the kurtosis is positive and we say that the data is {\it leptokurtic}. But the data in the middle are just pointy enough, so we say that it is {\it mesokurtic} and has kurtosis zero. This is summarised in the table below:
-
+The values of kurtosis are summarised in the table below:
 \begin{center}
 \begin{tabular}{lll}
-informal term & technical name & kurtosis value \\ \hline
-``too flat'' & platykurtic & negative \\
-``just pointy enough'' & mesokurtic & zero \\
-``too pointy'' & leptokurtic & positive 
+technical name & tail & kurtosis value \\ \hline
+platykurtic & thin & negative \\
+mesokurtic & about right & zero \\
+leptokurtic & heavy & positive 
 \end{tabular}
 \end{center}
 
@@ -427,15 +425,16 @@ $$
 
 \end{mdframed}
 
-More to the point, JASP has a check box for kurtosis just below the check box for skewness, and this gives a value for kurtosis of \rtext{0.101} with a standard error of \rtext{0.364}. Using the same idea as before where we divide the kurtosis by the standard error of the kurtosis, we note that this value is much less than 2 (\rtext{0.101}/\rtext{0.364} = \rtext{0.277}). This means that the AFL winning margins data are just pointy enough.
+For completeness, the keen eyed amongst you would have noticed a similarity in the equations of the mean, variance, skewness, and kurtosis. In fact these terms are all related to a mathematical concept of "moments of a distribution". There are indeed higher moments of a distribution that are needed to describe certain distributions but this is beyond the scope of this book. 
 
+More to the point, JASP has a check box for kurtosis just below the check box for skewness, and this gives a value for kurtosis of \rtext{0.101} with a standard error of \rtext{0.364}. Using the same idea as before where we divide the kurtosis by the standard error of the kurtosis, we note that this value is much less than 2 (\rtext{0.101}/\rtext{0.364} = \rtext{0.277}). This means that the AFL winning margins data are mesokurtic enough.
 
 \section{Descriptive statistics separately for each group~\label{sec:groupdescriptives}}
 
 It is very commonly the case that you find yourself needing to look at descriptive statistics broken down by some grouping variable. This is pretty easy to do in JASP. For instance, let's say I want to look at the descriptive statistics for some \rtext{clin.trial} data, broken down separately by \rtext{therapy} type. This is a new data set, one that you've never seen before. The data is stored in the \filename{clinicaltrial.csv} file and we'll use it a lot in Chapter~\ref{ch:anova} (you can find a complete description of the data at the start of that chapter). Let's load it and see what we've got:
 
 \vspace{0.5cm}
-\begin{figure}[ht]
+\begin{figure}[htb!]
 \begin{center}
 \epsfig{file=../img/descriptives/clinicaltrial.png,clip=true,width=14cm} 
 \caption{A screenshot of JASP showing the variables stored in the \filename{clinicaltrial.csv} file}
@@ -449,7 +448,7 @@ Evidently there were three drugs: a placebo, something called ``anxifree'' and s
 We can also go ahead and look at some other descriptive statistics, and this time separately for each type of therapy. In JASP, check Std. deviation, Skewness, and Kurtosis in the `Statistics' options. At the same time, transfer the \rtext{therapy} variable into the `Split' box, and you should get something like Figure \ref{fig:clinicaltrial_grouping}
 
 \vspace{0.5cm}
-\begin{figure}[htb]
+\begin{figure}[htb!]
 \begin{center}
 \epsfig{file=../img/descriptives/clinicaltrial_grouping.png,clip=true,width=14cm} 
 \caption{A screenshot of JASP showing Descriptives split by therapy type}
@@ -520,5 +519,3 @@ Stalin's infamous quote about the statistical character of the deaths of million
 Yet it is not so simple. Without numbers, without counts, without a description of what happened, we have {\it no chance} of understanding what really happened, no opportunity even to try to summon the missing feeling. And in truth, as I write this sitting in comfort on a Saturday morning half a world and a whole lifetime away from the Gulags, when I put the Ellman estimate next to the Stalin quote a dull dread settles in my stomach and a chill settles over me. The Stalinist repression is something truly beyond my experience, but with a combination of statistical data and those recorded personal histories that have come down to us, it is not entirely beyond my comprehension. Because what Ellman's numbers tell us is this: over a two year period Stalinist repression wiped out the equivalent of every man, woman and child currently alive in the city where I live. Each one of those deaths had it's own story, was it's own tragedy, and only some of those are known to us now. Even so, with a few carefully chosen statistics, the scale of the atrocity starts to come into focus.  
 
 Thus it is no small thing to say that the first task of the statistician and the scientist is to summarise the data, to find some collection of numbers that can convey to an audience a sense of what has happened. This is the job of descriptive statistics, but it's not a job that can be told solely using the numbers. You are a data analyst, and not a statistical software package. Part of your job is to take these {\it statistics} and turn them into a {\it description}. When you analyse data it is not sufficient to list off a collection of numbers. Always remember that what you're really trying to do is communicate with a human audience. The numbers are important, but they need to be put together into a meaningful story that your audience can interpret. That means you need to think about framing. You need to think about context. And you need to think about the individual events that your statistics are summarising. 
-
-

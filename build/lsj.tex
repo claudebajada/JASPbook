@@ -49,7 +49,8 @@
 % ... cengage: 276mm x 210mm
 % ... need extra: 1cm either side from the top and bottom?
 
-\usepackage[left=1in, right=1in, top=1.5in, bottom=1.5in]{geometry}
+\usepackage[inner=1.5in, outer=1in, top=1.5in, bottom=1.5in]{geometry}
+%\usepackage[left=1in, right=1in, top=1.5in, bottom=1.5in]{geometry}
 %\usepackage[left=2.5cm, right=2.5cm, top=4cm, bottom=4cm]{geometry}
 
 %\usepackage{fancybox}
@@ -158,19 +159,19 @@
 % Need to  have everything loaded BEFORE hyperref, except for apacite,
 % which needs to be loaded afterwards. 
 \usepackage{hyperref} % urls...
-\hypersetup{colorlinks=true,
-    citecolor={blue},
-    urlcolor={blue},
-    linkcolor={blue},
-	pdftitle={Learning Statistics with JASP},
-	pdfauthor={Danielle J Navarro, David R Foxcroft, Thomas J Faulkenberry, and Claude J. Bajada},
-	bookmarksnumbered=true,     
-    bookmarksopen=true,         
-    bookmarksopenlevel=2,
-    bookmarksdepth=2,       
-    pdfstartview=Fit,           
-    pdfpagemode=UseOutlines,    % this is the option you were lookin for
-}
+%\hypersetup{colorlinks=true,
+%    citecolor={blue},
+%    urlcolor={blue},
+%    linkcolor={blue},
+%	pdftitle={Learning Statistics with JASP},
+%	pdfauthor={Danielle J Navarro, David R Foxcroft, Thomas J Faulkenberry, and Claude J. Bajada},
+%	bookmarksnumbered=true,     
+%    bookmarksopen=true,         
+%    bookmarksopenlevel=2,
+%    bookmarksdepth=2,       
+%    pdfstartview=Fit,           
+%    pdfpagemode=UseOutlines,    % this is the option you were lookin for
+%}
 %% http://health.webdev.adelaide.edu.au/psychology/ccs/docs/lsr/lsr.pdf#nameddest=chapter.17
 
 
@@ -446,19 +447,19 @@
 \input{../tex/chapter02_studydesign}
 
 
-%\part{Describing and displaying data with JASP}
+\part{Describing and displaying data with JASP}
 
-%\input{../tex/chapter03_introj}
-%\input{../tex/chapter04_descriptives}
+\input{../tex/chapter03_introj}
+\input{../tex/chapter04_descriptives}
 %\input{../tex/chapter05_graphics}
 %\input{../tex/chapter06_datahandling}
 
-%\part{Statistical theory}
+\part{Statistical theory}
 
-%\input{../tex/prelude4}
+\input{../tex/prelude4}
 %\input{../tex/chapter07_probability}
-%\input{../tex/chapter08_estimation}
-%\input{../tex/chapter09_hypothesistesting}
+\input{../tex/chapter08_estimation}
+\input{../tex/chapter09_hypothesistesting}
 
 %\part{Statistical tools}
 
